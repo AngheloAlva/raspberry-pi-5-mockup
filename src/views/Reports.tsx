@@ -37,16 +37,16 @@ export const Reports = () => {
   const soxStats = calculateStats('sox');
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-4">
       {/* Header */}
       <Card>
-        <div className="flex items-center gap-3">
-          <Calendar className="w-6 h-6 text-emerald-600" />
+        <div className="flex items-center gap-2">
+          <Calendar className="w-4 h-4 text-gray-700" />
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">
+            <h2 className="text-base font-semibold text-gray-900">
               Reportes Históricos
             </h2>
-            <p className="text-sm text-gray-600">
+            <p className="text-xs text-gray-500">
               Evolución de contaminantes en las últimas 24 horas
             </p>
           </div>
@@ -54,59 +54,59 @@ export const Reports = () => {
       </Card>
 
       {/* Statistics Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card>
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm font-semibold text-gray-600 mb-4">CO - Estadísticas 24h</p>
-              <div className="mt-3 flex flex-col gap-2">
+              <p className="text-xs font-semibold text-gray-700 mb-2">CO - Estadísticas 24h</p>
+              <div className="mt-2 flex flex-col gap-1">
                 <p className="text-xs text-gray-500">Mín: {coStats.min.toFixed(1)} ppm</p>
                 <p className="text-xs text-gray-500">Máx: {coStats.max.toFixed(1)} ppm</p>
-                <p className="text-lg font-bold text-gray-900">
+                <p className="text-sm font-semibold text-gray-900">
                   Promedio: {coStats.avg.toFixed(1)} ppm
                 </p>
               </div>
             </div>
-            <TrendingUp className="w-5 h-5 text-orange-500" />
+            <TrendingUp className="w-4 h-4 text-orange-500" />
           </div>
         </Card>
 
         <Card>
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm font-semibold text-gray-600 mb-4">CO₂ - Estadísticas 24h</p>
-              <div className="mt-3 flex flex-col gap-2">
+              <p className="text-xs font-semibold text-gray-700 mb-2">CO₂ - Estadísticas 24h</p>
+              <div className="mt-2 flex flex-col gap-1">
                 <p className="text-xs text-gray-500">Mín: {co2Stats.min.toFixed(1)} ppm</p>
                 <p className="text-xs text-gray-500">Máx: {co2Stats.max.toFixed(1)} ppm</p>
-                <p className="text-lg font-bold text-gray-900">
+                <p className="text-sm font-semibold text-gray-900">
                   Promedio: {co2Stats.avg.toFixed(1)} ppm
                 </p>
               </div>
             </div>
-            <TrendingUp className="w-5 h-5 text-blue-500" />
+            <TrendingUp className="w-4 h-4 text-blue-500" />
           </div>
         </Card>
 
         <Card>
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-sm font-semibold text-gray-600 mb-4">SOx - Estadísticas 24h</p>
-              <div className="mt-3 flex flex-col gap-2">
+              <p className="text-xs font-semibold text-gray-700 mb-2">SOx - Estadísticas 24h</p>
+              <div className="mt-2 flex flex-col gap-1">
                 <p className="text-xs text-gray-500">Mín: {soxStats.min.toFixed(1)} ppm</p>
                 <p className="text-xs text-gray-500">Máx: {soxStats.max.toFixed(1)} ppm</p>
-                <p className="text-lg font-bold text-gray-900">
+                <p className="text-sm font-semibold text-gray-900">
                   Promedio: {soxStats.avg.toFixed(1)} ppm
                 </p>
               </div>
             </div>
-            <TrendingUp className="w-5 h-5 text-purple-500" />
+            <TrendingUp className="w-4 h-4 text-purple-500" />
           </div>
         </Card>
       </div>
 
       {/* CO Chart */}
       <Card>
-        <h3 className="text-xl font-semibold text-gray-900 mb-6">
+        <h3 className="text-sm font-semibold text-gray-900 mb-3">
           Monóxido de Carbono (CO) - 24 Horas
         </h3>
         <ResponsiveContainer width="100%" height={300}>
@@ -142,7 +142,7 @@ export const Reports = () => {
 
       {/* CO2 Chart */}
       <Card>
-        <h3 className="text-xl font-semibold text-gray-900 mb-6">
+        <h3 className="text-sm font-semibold text-gray-900 mb-3">
           Dióxido de Carbono (CO₂) - 24 Horas
         </h3>
         <ResponsiveContainer width="100%" height={300}>
@@ -178,7 +178,7 @@ export const Reports = () => {
 
       {/* SOx Chart */}
       <Card>
-        <h3 className="text-xl font-semibold text-gray-900 mb-6">
+        <h3 className="text-sm font-semibold text-gray-900 mb-3">
           Óxidos de Azufre (SOx) - 24 Horas
         </h3>
         <ResponsiveContainer width="100%" height={300}>
@@ -214,7 +214,7 @@ export const Reports = () => {
 
       {/* Combined Chart */}
       <Card>
-        <h3 className="text-xl font-semibold text-gray-900 mb-6">
+        <h3 className="text-sm font-semibold text-gray-900 mb-3">
           Comparativa de Todos los Contaminantes
         </h3>
         <ResponsiveContainer width="100%" height={400}>

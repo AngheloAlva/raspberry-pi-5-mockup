@@ -33,15 +33,15 @@ export const Dashboard = () => {
   }));
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-4">
       {/* Sensor Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <SensorCard
           title="Monóxido de Carbono (CO)"
           value={currentData.co}
           unit="ppm"
           icon={Cloud}
-          color="bg-gradient-to-br from-orange-500 to-red-500"
+          color="bg-orange-500"
           alertThreshold={alertConfig.co}
         />
         <SensorCard
@@ -49,7 +49,7 @@ export const Dashboard = () => {
           value={currentData.co2}
           unit="ppm"
           icon={Wind}
-          color="bg-gradient-to-br from-blue-500 to-cyan-500"
+          color="bg-blue-500"
           alertThreshold={alertConfig.co2}
         />
         <SensorCard
@@ -57,17 +57,17 @@ export const Dashboard = () => {
           value={currentData.sox}
           unit="ppm"
           icon={Droplets}
-          color="bg-gradient-to-br from-purple-500 to-pink-500"
+          color="bg-purple-500"
           alertThreshold={alertConfig.sox}
         />
       </div>
 
       {/* Real-time Chart */}
       <Card>
-        <h2 className="text-2xl font-bold text-gray-900 mb-3">
+        <h2 className="text-base font-semibold text-gray-900 mb-3">
           Monitoreo en Tiempo Real
         </h2>
-        <p className="text-sm text-gray-600 mb-6">
+        <p className="text-xs text-gray-500 mb-4">
           Últimas lecturas de los sensores (actualización cada 3 segundos)
         </p>
         <ResponsiveContainer width="100%" height={400}>
@@ -122,19 +122,19 @@ export const Dashboard = () => {
 
       {/* System Status */}
       <Card>
-        <h3 className="text-xl font-semibold text-gray-900 mb-5">
+        <h3 className="text-sm font-semibold text-gray-900 mb-3">
           Estado del Sistema
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="flex items-center justify-between p-5 bg-gray-50 rounded-lg">
-            <span className="text-sm font-medium text-gray-600">Última actualización</span>
-            <span className="text-sm font-semibold text-gray-900">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="flex items-center justify-between p-3 bg-gray-50 rounded-md">
+            <span className="text-xs font-medium text-gray-500">Última actualización</span>
+            <span className="text-xs font-semibold text-gray-900">
               {new Date(currentData.timestamp).toLocaleTimeString('es-ES')}
             </span>
           </div>
-          <div className="flex items-center justify-between p-5 bg-gray-50 rounded-lg">
-            <span className="text-sm font-medium text-gray-600">Puntos de datos</span>
-            <span className="text-sm font-semibold text-gray-900">
+          <div className="flex items-center justify-between p-3 bg-gray-50 rounded-md">
+            <span className="text-xs font-medium text-gray-500">Puntos de datos</span>
+            <span className="text-xs font-semibold text-gray-900">
               {historicalData.length}
             </span>
           </div>

@@ -21,20 +21,20 @@ export const SensorCard = ({
   const isAlert = alertThreshold !== undefined && value > alertThreshold;
 
   return (
-    <Card className={`transition-all ${isAlert ? 'ring-2 ring-red-500' : ''}`}>
+    <Card className={`transition-all ${isAlert ? 'border-red-300' : ''}`}>
       <div className="flex items-start justify-between">
         <div className="flex-1">
-          <p className="text-sm font-semibold text-gray-600 mb-3">{title}</p>
-          <p className="mt-2 text-4xl font-bold text-gray-900">
+          <p className="text-xs font-medium text-gray-500 mb-2">{title}</p>
+          <p className="text-2xl font-semibold text-gray-900">
             {value.toFixed(1)}
-            <span className="text-xl ml-2 text-gray-500">{unit}</span>
+            <span className="text-sm ml-1 text-gray-400">{unit}</span>
           </p>
           {isAlert && (
-            <p className="mt-3 text-xs text-red-600 font-semibold">⚠️ Alerta: Umbral excedido</p>
+            <p className="mt-2 text-xs text-red-600 font-medium">Umbral excedido</p>
           )}
         </div>
-        <div className={`p-4 rounded-xl ${color}`}>
-          <Icon className="w-7 h-7 text-white" />
+        <div className={`p-2 rounded-md ${color}`}>
+          <Icon className="w-4 h-4 text-white" />
         </div>
       </div>
     </Card>
